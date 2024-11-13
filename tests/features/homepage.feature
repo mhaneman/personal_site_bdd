@@ -14,7 +14,17 @@ Feature: Homepage
   Scenario Outline: The user went to all header links
     When the user "clicked" on "<item>" header link
     Then the user is redirected to "<url>"
+    Examples:
+      | item      | url                                 |
+      | Articles  | https://www.mthaneman.xyz/articles/ |
+      | About     | https://www.mthaneman.xyz/about/    |
+      | Projects  | https://www.mthaneman.xyz/projects/ |
 
+
+  Scenario Outline: The user went to all header links muliple times
+    When the user "clicked" on "<item>" header link
+    And the user "clicked" on "<item>" header link
+    Then the user is redirected to "<url>"
     Examples:
       | item      | url                                 |
       | Articles  | https://www.mthaneman.xyz/articles/ |

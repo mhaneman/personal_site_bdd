@@ -28,9 +28,8 @@ def the_user_on_header_link(action, item, page: Page):
 
 
 @then(parsers.parse('the user is redirected to "{url}"'))
-def the_user_is_redirected_to(url, page):
-    # check url
-    pass
+def the_user_is_redirected_to(url, page: Page):
+    assert page.url == url
 
 
 def do_action_on_element(action: str, _element: Locator):
