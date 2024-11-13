@@ -2,7 +2,7 @@ Feature: Homepage
   Background:
     Given the user was on the homepage
 
-  Scenario Outline: Social Links
+  Scenario Outline: The user navigated to the Social Media Links 
     When the user "clicked" on "<icon>" social link
     Then the user is redirected to "<url>"
     Examples:
@@ -11,11 +11,12 @@ Feature: Homepage
       | gitlab    | https://gitlab.com/mhaneman                             |
       | linkedin  | https://www.linkedin.com/in/michael-haneman-1062461a4/  |
 
-  Scenario Outline: Header Navigation
+  Scenario Outline: The user went to all header links
     When the user "clicked" on "<item>" header link
+    Then the user is redirected to "<url>"
 
     Examples:
-      | item      |
-      | Articles  |
-      | About     |
-      | Projects  | 
+      | item      | url                                 |
+      | Articles  | https://www.mthaneman.xyz/articles/ |
+      | About     | https://www.mthaneman.xyz/about/    |
+      | Projects  | https://www.mthaneman.xyz/projects/ |
